@@ -124,14 +124,24 @@ namespace ClassWork
                     sum += number;
                     count++;
                 }
-                double sr_znach = sum - number;
-                count--;
-                sr_znach /= count;
-                Console.WriteLine("Среднее арифметическое чисел = {0}", sr_znach);
             }
-            catch(FormatException)
+            catch(Exception)
             {
-                Console.WriteLine("Вы ввели не тот формат");
+                Console.WriteLine("Ошибка");
+            }
+            finally
+            {
+                if (count != 0)
+                {
+                    double sr_znach = sum - number;
+                    count--;
+                    sr_znach /= count;
+                    Console.WriteLine("Среднее арифметическое чисел = {0}", sr_znach);
+                }
+                else
+                {
+                    Console.WriteLine("Нулевая последовательность");
+                }
             }
 
             Console.WriteLine("Задание 8");
